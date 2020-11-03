@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  imageName: 'ramakrishnambdocker/DocnetCoreWebappDockerCICD:$(build.buildNumber)'
+  imageName: 'lingamnagani/DocnetCoreWebappDockerCICD:$(build.buildNumber)'
 
 steps:
 
@@ -19,7 +19,7 @@ steps:
   inputs:
     command: Build an image
     containerregistrytype: 'Container Registry'
-    dockerRegistryEndpoint: DockerRegistryRK
+    dockerRegistryEndpoint: dockerdevops
     dockerFile: Dockerfile
     imageName: $(imageName)
     restartPolicy: always
@@ -29,7 +29,7 @@ steps:
   inputs:
     command: Push an image
     containerregistrytype: 'Container Registry'
-    dockerRegistryEndpoint: DockerRegistryRK
+    dockerRegistryEndpoint: dockerdevops
     dockerFile: Dockerfile
     imageName: $(imageName)
     restartPolicy: always
